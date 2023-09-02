@@ -1,0 +1,29 @@
+1 目前,系统中进行手机验证的验证码, 由于用户没有购买短信服务,所以设置成为固定的 888888
+
+  可以在 com.highcom.admin.controller/HomeLoginController.java   中进行修改
+			
+		如下:
+	        // 生成6位验证码
+		//String msgCode = String.valueOf(new Random().nextInt(899999) + 100000);
+		
+		//临时用固定值处理
+		String msgCode = "888888"
+		
+
+2 上传的图片资源,需要在tomcat中建立虚拟目录 ,例如,本项目中在e盘建立了 upload 目录,并映射到了 /rctms/homeImages 这个虚拟目录上
+          在tomcat的 server.xml中:
+
+          <Context debug="0" docBase="E:\upload" path="/rctms/homeImages" reloadable="true"/>
+
+   并且, 图片资源,要放到 E:\upload 这个目录下
+
+
+3 系统运行环境 
+      jdk1.8
+      apache-tomcat-8.5.49
+      mysql5.0
+
+4 后台用户名和密码
+      bbbbbb
+      bbbbbb
+     
